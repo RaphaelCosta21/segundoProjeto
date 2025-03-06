@@ -1,0 +1,215 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --cor-primaria: #22d4fd;
+    --cor-terciaria: #f6f6f6;
+    --cor-quaternaria: #000000;
+    --cor-quintaria: #007bff;
+    --cor-hover: #272727;
+
+    --fonte-primaria: 'Krona One', sans-serif;
+    --fonte-secundaria: 'Montserrat', sans-serif;
+}
+.theme-light {
+    --cor-primaria: #0081a7;
+    --cor-terciaria: #00afb9;
+    --cor-quaternaria: #fdfcdc;
+    --cor-quintaria: #fed9b7;
+    --cor-hover: #f07167;
+}
+
+.theme-dark {
+    --cor-primaria: #6f1d1b;
+    --cor-terciaria: #bb9457;
+    --cor-quaternaria: #432818;
+    --cor-quintaria: #99582a;
+    --cor-hover: #ffe6a7;
+}
+
+.theme-colorful {
+    --cor-primaria: #003049;
+    --cor-terciaria: #d62828;
+    --cor-quaternaria: #f77f00;
+    --cor-quintaria: #fcbf49;
+    --cor-hover: #eae2b7;
+}
+/*@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital@0;1&display=swap'); Importa as fontes do Google Fonts, porém aqui nao funciona*/
+
+body {
+    /* height: 100vh; */
+    background-color: var(--cor-quaternaria);
+    box-sizing: border-box;
+    color: var(--cor-terciaria);
+}
+
+.cabecalho{
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    padding: 2% 0% 0% 15%; /*top right bottom left*/
+    /* display: flex; */
+    /* justify-content: space-evenly; */
+}
+.cabecalho__menu{
+    display: flex;
+    gap: 80px;
+}
+
+.cabecalho__menu__link{
+    font-family: var(--fonte-secundaria);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--cor-primaria);
+    /* margin: 0 10px; */
+    /* padding: 10px 15px; */
+    text-decoration: none;
+}
+.cabecalho__menu__link:hover{
+    color: var(--cor-quintaria);
+}
+.apresentacao__imagem{
+    width: 50%;
+}
+.titulo-destaque{
+    color: var(--cor-primaria);
+}
+.apresentacao{
+    display:flex;
+    padding: 5% 15%;
+    justify-content: space-between;
+    align-items:center; /*alinha verticalmente*/
+    gap:82px;
+    /* justify-content: space-evenly; */
+}
+.apresentacao__conteudo{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /*Espaçamento entre os elementos*/
+}
+.apresentacao__conteudo__titulo{
+    font-size: 2.25rem;
+    font-family: var(--fonte-primaria);
+}
+.apresentacao__conteudo__texto{
+    font-size: 1.5rem;
+    font-family: var(--fonte-secundaria);
+}
+.apresentacao__links{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+.apresentacao__links__subtitulo{
+    font-size: 1.5rem;
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+}
+.apresentacao_links__link{
+    /*background-color: #000000;*/
+    width: 50%;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    color: var(--cor-terciaria);
+    border: 2px solid var(--cor-primaria);
+    border-width: 1px;
+    padding: 21.5px 0px; /*vertical e horizontal */
+    text-decoration: none;
+    font-family: var(--fonte-secundaria);
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+.apresentacao_links__link:hover{
+    background-color: var(--cor-hover);
+    transform: scale(1.2);
+    transition: transform 0.5s ease; /* Adiciona uma transição suave */
+}
+.rodape{
+    color: var(--cor-quaternaria);
+    background-color: var(--cor-primaria);
+    padding: 24px;
+    text-align: center;
+    font-family: var(--fonte-secundaria);
+    font-size: 1.5rem;
+    font-weight: 400;
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    position: relative;
+}
+.rodape p {
+    margin: 0; /* Remove a margem padrão */
+}
+.rodape__menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.rodape__menu li {
+    display: inline;
+}
+.rodape__menu__projetos{
+    font-family: var(--fonte-secundaria);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--cor-quaternaria);
+    text-decoration: none;
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: right; */
+    cursor: pointer;
+}
+.rodape__menu__projetos:hover{
+    color: var(--cor-quintaria);
+}
+
+.apresentacao__conteudo__texto a{
+    text-decoration: none;
+    color: var(--cor-primaria);
+}
+.snowflake {
+    position: fixed; /* Fixa a posição do floco de neve na tela */
+    top: -10px; /* Começa fora da tela, no topo */
+    z-index: 9999; /* Garante que os flocos de neve fiquem acima de outros elementos */
+    user-select: none; /* Impede que o usuário selecione o floco de neve */
+    pointer-events: none; /* Impede que o floco de neve interfira com cliques */
+    color: white; /* Define a cor dos flocos de neve */
+    font-size: 1rem; /* Define o tamanho da fonte */
+    opacity: 0.8; /* Define a opacidade dos flocos de neve */
+    animation: fall linear infinite; /* Aplica a animação de queda */
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh); /* Move o floco de neve para baixo até fora da tela */
+    }
+}
+@media (max-width: 1200px){
+    .cabecalho{
+        padding: 10% 0% 0% 5%; /*top right bottom left*/
+    }
+    .cabecalho__menu{
+        justify-content: center;
+    }
+    .apresentacao{
+        display:flex;
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+    .apresentacao__conteudo{
+        width: auto;
+    }
+}
